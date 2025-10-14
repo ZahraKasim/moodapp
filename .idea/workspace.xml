@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35e414e8-672d-4723-84c4-7b9bf033fee9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Sem5_MPR.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/spotify_dataset.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/1st-song.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/songs/I_Wanna_Be_Yours.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/songs/jo_tum_mere_ho.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/songs/nadaniya.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/songs/pehli_nazar_mein.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/songs/tum_hi_ho.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-    </list>
+    <list default="true" id="35e414e8-672d-4723-84c4-7b9bf033fee9" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +27,9 @@
     &quot;assignee&quot;: &quot;Soweda&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="eac03d7e-1653-486b-bfa6-cdb973416b8c" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Soweda/Sem5_MPR.git&quot;,
@@ -130,6 +112,19 @@
       <option name="presentableId" value="Default" />
       <updated>1753684844688</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1760422944541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760422944541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
