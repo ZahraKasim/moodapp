@@ -24,10 +24,9 @@ body {
 header {
   width: 85%;
   height: 95%;
-  border: 1px #fff;
+  border: 1px solid #fff;
   display: flex;
   flex-wrap:wrap;
-  /*border:1px solid #fff;*/
   overflow: hidden;
 }
 
@@ -36,7 +35,7 @@ header .head_section, .song_section{
   position: relative;
   width: 25%;
   height: 90%;
-  /*border: 1px solid #fff;Z*/
+  /*border: 1px solid #fff;*/
   background-color: #111727;
   color:#fff;
 }
@@ -76,12 +75,16 @@ h3,
 }
 
 /* Specific positioning for the heading */
-h2 {
-  top: 80px;
-  left: 62.50%;
+.topic{
+  display: block;
+  inline-size: 50%;
+  block-size: 10%;
+  top: 19%;
+  left: 63%;
   transform: translateX(-50%);
   position: absolute;
-  text-align: center;
+  text-align: left;
+  /*border: 1px solid #fff;*/
 
   font-family: 'Great Vibes', cursive;
   font-size: 55px;
@@ -119,24 +122,24 @@ h2 {
   font-size: 24px;
   font-weight: bold;
 }*/
-h3 {
-  top: 300px; /* pushes heading down a bit. not exist*/
+h3{
+  top: -75px; /* pushes heading down a bit. not exist*/
   font-size: 24px;
   font-weight: bold;
 }
 
 .success-text {
   position: relative;
-  top: 700px; /* under the heading */
+  top: -75px; /* under the heading */
   display: flex;
   flex-direction: column;
-  left:62.5%;
+  left:50%;
   gap: 10px;
 }
 .songs-title {
   position: absolute;
-  top: 640px;            /* distance from top */
-  left: 62.5%;           /* 62.5% of page width */
+  top: 580px;            /* distance from top */
+  left: 80%;           /* 62.5% of page width */
   transform: translateX(-50%);
   font-size: 22px;
   font-weight: bold;
@@ -145,9 +148,11 @@ h3 {
 }
 
 .songs-list {
-  position: absolute;
-  top: 0px;               /* adjust this as per your layout */
-  left: 62.5%;
+ position: relative;
+  top: -75px;
+  left: 150%;
+  /*top: 0px;               /* adjust this as per your layout
+  left: 62.5%;*/
   transform: translateX(-50%);
   width: 300px;           /* optional: set a fixed width */
   list-style-type: disc;  /* ensures normal round bullets */
@@ -174,7 +179,7 @@ h3 {
   top: 500px; /* under the heading */
   display: flex;
   flex-direction: column;
-  left:62.5%;
+  left: 62.5%;
   gap: 10px;
   padding: 12px 15px;
   width: 250px;
@@ -206,7 +211,9 @@ h3 {
   font-family: 'Poppins', sans-serif;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #36e2ec, #4caf50);
+  /*background: linear-gradient(135deg, #36e2ec, #4caf50);*/
+  background: #2A7B9B;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(6, 20, 46, 1) 100%);
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -214,7 +221,8 @@ h3 {
 }
 
 #artistForm button:hover {
-  background: linear-gradient(135deg, #4caf50, #36e2ec);
+  /*background: linear-gradient(135deg, #4caf50, #36e2ec);*/
+  background: linear-gradient(90deg, #06142E,#2A7B9B);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
@@ -227,6 +235,7 @@ h3 {
 #artistForm {
   top: 450px; /* under the heading */
   display: flex;
+  top: 60%;
   flex-direction: column;
   left:62.5%;
   gap: 10px;
@@ -234,10 +243,10 @@ h3 {
 
 /* Positioning mood result text */
 #moodResult {
-  top: 600px;
+  top: 740px;
   font-size: 25px;
   font-weight: bold;
-  left:62.5%
+  left:62%
 }
 
 /* Song list right below mood result */
@@ -251,7 +260,7 @@ h3 {
 #artistForm input[type="text"] {
   padding: 10px;
   width: 250px;
-  border-radius: 6px;
+  border-radius: 10px;
   border: none;
 }
 
@@ -259,6 +268,7 @@ h3 {
 #artistForm button {
   width: 75%;             /* only 75% of the section width */
   margin: 0 auto;              /* no automatic centering */
+  top: 20px;
   position: relative;
   padding: 10px 20px;
   z-index:10;
@@ -279,7 +289,7 @@ h3 {
   width: 75%;             /* only 75% of the section width */
   margin: 0 auto;              /* no automatic centering */
   position: relative;
-  top: 150px;
+  top: 170px;
   left: 50%/* adjust vertical position if needed */
   transform: translateY(-50%);
   text-align: left;        /* LEFT-align text instead of center */
@@ -314,35 +324,34 @@ header .main_controls{
 
 /*appname*/
 header .head_section h1{
-  display:block;
-  inline-size: 50%;
+  display: block;
+  inline-size: 80%;
   block-size: 8%;
-  border-radius: 100px;
+  border-radius: 25px;
   background-color: #0b101e;
   font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-size: 40px;
   font-weight: 700;
   color: #FFF;
-  padding: 10px 30px;
-  margin: 20px 0px;
+  padding: 10px;
+  padding-left: 15px;
+  margin-left: 0px;
   box-shadow: 0 5px 20px #090f1f;
   top: 20px
   /*border:1px solid #fff;*/
-
 }
 
 /*playlist section block*/
 header .head_section .playlists{
     margin: 55px 0 0 30px;
     text-align: left;
-
 }
 
 /*playlist section text*/
 header .head_section .playlists h4{
     font-size: 18px;
     font-weight: 600;
-    padding-bottom: 15px;
+    padding-bottom: 23px;
     color: #4c5262;
     cursor: pointer;
     display: flex;
@@ -622,9 +631,9 @@ header .main_controls .music_bar .point::before{
     width: 15px;
     height: 15px;
     border: 1px solid #36e2ec;
-    top: -5px;
+    top: -4px;
     border-radius: 100%;
-    left: -3px;
+    left: -4px;
     box-shadow: inset 0 0 3px #36e2ec;
 }
 
@@ -639,6 +648,177 @@ header .main_controls .music_bar input{
     transition: 3s linear;
     opacity: 0;
 }
+
+/*volume bar position*/
+header .main_controls .vol{
+    position: relative;
+    width: 100px;
+    height: 2px;
+    margin-left: 200px;
+    background: rgb(105, 105, 170, .1);
+}
+
+/*volume icon*/
+header .main_controls .vol .bi{
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    top: -29px;
+    left: -45px;
+}
+
+/*range input type vol*/
+header .main_controls .vol input{
+    position: absolute;
+    width: 100%;
+    left: -9px;
+    top: -28px;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+}
+
+/*dot for volume*/
+header .main_controls .vol .vol_bar{
+    position: absolute;
+    background: #36e2ec;
+    width: 0%;
+    height: 100%;
+    top: 0;
+}
+
+/*volume indicator dot*/
+header .main_controls .vol .point{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #36e2ec;
+    top: -4px;
+    border-radius: 100%;
+    left: 0;
+    transition: 1s linear;
+    cursor: pointer;
+}
+
+/*volume indicator dot animation*/
+header .main_controls .vol .point::before{
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #36e2ec;
+    top: -4px;
+    border-radius: 100%;
+    left: -4px;
+    box-shadow: inset 0 0 3px #36e2ec;
+}
+
+/*navigation bar*/
+header song_section {
+    z-index: 2;
+}
+
+header .song_section nav{
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    /*border: 1px solid white;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .song_section nav ul{
+   display: flex;
+}
+
+header .song_section nav ul li{
+   position: relative;
+   list-style-type: none;
+   font-size: 25px;
+   color: #4c5262;
+   margin-right: 25px;
+   cursor: pointer;
+   transition: .3s linear;
+}
+
+/*Clicking effect of nav bar*/
+header .song_section nav ul li:hover{
+    color: #fff;
+}
+
+header .song_section nav ul li:nth-child(1){
+    color: #fff;
+}
+
+header .song_section nav ul li span{
+    position: absolute;
+    width: 100%;
+    height: 2.5px;
+    background: #36e2ec;
+    bottom: -5px;
+    left: 0px;
+    border-radius: 20px;
+}
+
+/*search bar*/
+header .song_section nav .search{
+    position: relative;
+    width: 40%;
+    padding: 1px 10px;
+    border-radius: 20px;
+    color: gray;
+    z-index: 2;
+}
+
+header .song_section nav .search::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 70px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: rgb(184, 184, 184,.1);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+header .song_section nav .search .bi{
+    font-size: 18px;
+    padding: 3px 0px 0px 10px;
+}
+
+header .song_section nav .search input{
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0px 10px;
+    color: #fff;
+    font-size: 17px;
+    z-index: 1;
+}
+
+/*user*/
+header .song_section nav .user{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .song_section nav .user img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px #131312;
+}
+
+
 
 
 

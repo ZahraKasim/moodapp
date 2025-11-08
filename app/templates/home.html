@@ -19,12 +19,12 @@
 
 <body style="background-color: {{ bg_color }};">
 <!--    <h3>Mood detected: {{ mood }}</h3>-->
-
-<h2>🎵 Mood-Based Music Recommender</h2>
-  <form id="artistForm">
+<div>
+    <h2 class="topic">🎵 Mood-Based Music Recommender</h2></div>
+<div><form id="artistForm">
     <input type="text" name="artist" placeholder="Enter Artist Name" required>
     <button type="submit">Get Recommendations</button>
-  </form>
+</form></div>
 
   <h3 id="moodResult"></h3>
 
@@ -33,8 +33,7 @@
 </audio>
 
 
-
-<h3 class="songs-title" id="recommendationTitle" style="display:none;">Recommended Songs:</h3>
+    <h3 class="songs-title" id="recommendationTitle" style="display:none;">Recommended Songs:</h3>
 <div class="songs" id="songsList"></div>
 
 
@@ -53,7 +52,7 @@
 
             <li class="songs">
                 <span>01</span>
-                <img src="../static/1st-song.jpeg" alt="Aditya Rikhari">
+                <img src="../static/1st-song.jpg" alt="Aditya Rikhari">
                 <h5>
                     Sahiba
                     <div class="subtitle">Aditya Rikhari</div>
@@ -63,50 +62,50 @@
 
             <li class="songs">
                 <span>02</span>
-                <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
+                <img src="../static/2nd-song.jpg" alt="Arctic Monkeys">
                 <h5>
-                    Sahiba
-                    <div class="subtitle">Aditya Rikhari</div>
+                    I Wanna Be Yours
+                    <div class="subtitle">Arctic Monkeys</div>
                 </h5>
                 <i class="bi playListPlay bi-play-circle-fill" id="2"></i>
             </li>
 
             <li class="songs">
                 <span>03</span>
-                <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
+                <img src="../static/3rd-song.jpg" alt="Anuv Jain">
                 <h5>
-                    Sahiba
-                    <div class="subtitle">Aditya Rikhari</div>
+                    Jo Tum Mere Ho
+                    <div class="subtitle">Anuv Jain</div>
                 </h5>
                 <i class="bi playListPlay bi-play-circle-fill" id="3"></i>
             </li>
 
             <li class="songs">
                 <span>04</span>
-                <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
+                <img src="../static/4th-song.jpg" alt="Akshath">
                 <h5>
-                    Sahiba
-                    <div class="subtitle">Aditya Rikhari</div>
+                    Nadaniya
+                    <div class="subtitle">Akshath</div>
                 </h5>
                 <i class="bi playListPlay bi-play-circle-fill" id="4"></i>
             </li>
 
             <li class="songs">
                 <span>05</span>
-                <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
+                <img src="../static/5th-song.jpg" alt="Atif Aslam">
                 <h5>
-                    Sahiba
-                    <div class="subtitle">Aditya Rikhari</div>
+                    Pehli Nazar Mein
+                    <div class="subtitle">Atif Aslam</div>
                 </h5>
                 <i class="bi playListPlay bi-play-circle-fill" id="5"></i>
             </li>
 
             <li class="songs">
                 <span>06</span>
-                <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
+                <img src="../static/6th-song.jpg" alt="Arijit Singh">
                 <h5>
-                    Sahiba
-                    <div class="subtitle">Aditya Rikhari</div>
+                    Tum Hi Ho
+                    <div class="subtitle">Arijit Singh</div>
                 </h5>
                 <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
             </li>
@@ -117,13 +116,30 @@
 
 
     <div class="song_section">
+        <nav>
+            <ul>
+                <li>Explore<span></span></li>
+                <li>My Library</li>
+                <li>Radio</li>
+            </ul>
+            <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Music...">
+            </div>
+
+            <div class="user">
+                <img src="../static/user/user.png" alt="User" title="User">
+            </div>
+        </nav>
+
+
         <div class="instructions">
   <p>🎧 How to Use:</p>
   <p>1. <b>Enter your favorite artist’s name</b> in the search box.</p>
   <p>2. <b>Smile or make a face!</b> — the app detects your mood automatically.</p>
   <p>3. <b>Get song suggestions</b> that match your vibe instantly!</p>
   <p>4. Sit back, hit play, and <b>enjoy your personalized playlist. 🎵</b></p>
-</div>
+        </div>
 
     </div>
 
@@ -134,28 +150,35 @@
             <div class="pulse2"></div>
             <div class="pulse3"></div>
         </div>
-        <img src="../static/1st-song.jpg" alt="Aditiya Rikhari">
-        <h5>Sahiba
+        <img src="../static/1st-song.jpg" alt="Aditiya Rikhari" id="poster_master_play">
+        <h5 id="title">Sahiba
             <div class="subtitle">Aditya Rikhari</div>
         </h5>
         <div class="control_icons">
-                <i class="bi bi-skip-start-fill"></i>
-                <i class="bi bi-play-fill"></i>
-                <i class="bi bi-skip-end-fill"></i>
+                <i class="bi bi-skip-start-fill" id="back"></i>
+                <i class="bi bi-play-fill" id="masterPlay"></i>
+                <i class="bi bi-skip-end-fill" id="next"></i>
         </div>
         <span id="start">0:00</span>
         <div class="music_bar">
+        <input type="range" id="seek" min="0" max="100" value="0">
     <div class="bar1" id="bar1"></div>
     <div class="point" id="point"></div>
 </div>
 
         <span id="end">0:00</span>
+
+        <div class="vol">
+            <i class="bi bi-volume-down-fill"></i>
+            <input type="range" id="vol" min="0" max="100" value="0">
+            <div class="vol_bar"></div>
+            <div class="point" id="vol_dot"></div>
+
+        </div>
     </div>
 
+</header>
 
-
-
-  </header>
 
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
