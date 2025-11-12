@@ -24,7 +24,7 @@ body {
 header {
   width: 85%;
   height: 95%;
-  border: 1px solid #fff;
+  /*border: 1px solid #fff;*/
   display: flex;
   flex-wrap:wrap;
   overflow: hidden;
@@ -86,10 +86,10 @@ h3,
   text-align: left;
   /*border: 1px solid #fff;*/
 
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Great Vibes',Cursive;
   font-size: 55px;
   font-weight: 500;
-  color: #c0c0c0; /* silver base */
+  color: #06402B; /* silver base */
   text-shadow:
     0 0 10px #ffffff,
     0 0 20px #d9d9d9,
@@ -138,7 +138,7 @@ h3{
 }
 .songs-title {
   position: absolute;
-  top: 580px;            /* distance from top */
+  top: 560px;            /* distance from top */
   left: 80%;           /* 62.5% of page width */
   transform: translateX(-50%);
   font-size: 22px;
@@ -149,7 +149,7 @@ h3{
 
 .songs-list {
  position: relative;
-  top: -75px;
+  top: -100px;
   left: 150%;
   /*top: 0px;               /* adjust this as per your layout
   left: 62.5%;*/
@@ -408,7 +408,7 @@ header .head_section .song_menu{
     height: 486px;
     /*border: 1px solid #fff;*/
     margin-top: 40px;
-    padding-top: 0;
+    padding-top: -10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -424,6 +424,7 @@ header .head_section .song_menu li{
     position: relative;
     list-style: none;
     text-align: left;
+    top: -23px;
     padding: 0 20px;
     margin: 0;
     height: 60px;
@@ -609,6 +610,7 @@ header .main_controls .music_bar .bar1{
     width: 0;
     height: 100%;
     top: 0;
+    transition: 1s linear;
 }
 
 /*time indicator dot*/
@@ -686,6 +688,7 @@ header .main_controls .vol .vol_bar{
     width: 0%;
     height: 100%;
     top: 0;
+    transition: 1s linear;
 }
 
 /*volume indicator dot*/

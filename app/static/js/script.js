@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let recommendedSongs = [];  // filled by /recommend
     let currentIndex = 0;
 
+
+
+
     // --- Artist form submission ---
     document.getElementById("artistForm").addEventListener("submit", async function(e) {
         e.preventDefault();
@@ -86,6 +89,8 @@ let listHTML = "<ul class='songs-list'>";
         }
     });
 
+
+
     // --- Previous button ---
     prevBtn.addEventListener("click", () => {
         if(recommendedSongs.length === 0) return;
@@ -127,7 +132,70 @@ player.addEventListener("timeupdate", () => {
 
   startTime.innerText = formatTime(player.currentTime);
   endTime.innerText = formatTime(player.duration || 0);
+
+
+   const makeAllPlays = () =>{
+        Array.from(document.getElementsByClassName('.playListPLay')).forEach((element)=>{
+            element.classList.add('bi-play-circle-fill');
+            element.classList.remove('bi-pause-circle-fill');
+        })
+     }
+
+    let index = 0;
+    Array.from(document.getElementsByClassName('.playListPLay')).forEach((element)=>{
+        element.addEventListener('click', (e)=>{
+            index = e.target.id;
+            e.target.classList.remove('bi-play-circle-fill');
+            e.target.classList.add('bi-pause-circle-fill');
+        })
+    })
+
+  seek.value = progressBar;
+  bar1.style.width = `$(seekbar)%`;
+  point.style.left = `$(seekbar)%`;
+
 });
+
+seek.addEventListener(`change`, ()=>{
+    player.currentTime = seek.value * player.duration/100;
+})
+
+player.addEventListener('ended', ()=>{
+    playBtn.classList.add("bi-play-fill");
+    playBtn.classList.remove("bi-pause-fill");
+    pulse.classList.remove('active2');
+})
+
+let vol_icon = document.getElementById('vol_icon');
+let vol = document.getElementById('vol');
+let vol_dot = document.getElementById('vol_dot');
+let vol_bar = document.getElementsByClassName('vol_bar')[0];
+
+vol.addEventListener('change', ()=>{
+    if(vol.value == 0){
+        vol_icon.classList.remove('bi-volume-down-fill');
+        vol_icon.classList.add('bi-volume-mute-fill');
+        vol_icon.classList.remove('bi-volume-up-fill');
+    }
+
+    if(vol.value > 0){
+        vol_icon.classList.add('bi-volume-down-fill');
+        vol_icon.classList.remove('bi-volume-mute-fill');
+        vol_icon.classList.remove('bi-volume-up-fill');
+    }
+
+    if(vol.value > 50){
+        vol_icon.classList.remove('bi-volume-down-fill');
+        vol_icon.classList.remove('bi-volume-mute-fill');
+        vol_icon.classList.add('bi-volume-up-fill');
+    }
+
+    let vol_a = vol.value;
+    vol_bar.style.width = `${vol_a}%`;
+    vol_dot.style.left = `${vol_a}%`;
+    player.volume = vol_a/100;
+
+})
 
 
 
@@ -137,4 +205,21 @@ player.addEventListener("timeupdate", () => {
         const seconds = Math.floor(sec % 60);
         return `${minutes}:${seconds < 10 ? "0"+seconds : seconds}`;
     }
+
+
+
+    let index1 = 0;
+
+Array.from(document.getElementsByClassName('playListPlay')).forEach((e)=> {
+    e.addEventListener('click', (el)=>{
+    index1 = el.target.id;
+    //console.log(index);
+    source.src = `../static/songs/${index1}.mp3`;
+    player.load();
+    player.play();
+    })
+})
+
 });
+
+

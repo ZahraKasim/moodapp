@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35e414e8-672d-4723-84c4-7b9bf033fee9" name="Changes" comment="1. Changes in layout.&#10;2. Added Nav Bar Vol.">
+    <list default="true" id="35e414e8-672d-4723-84c4-7b9bf033fee9" name="Changes" comment="1. Pulse Animation when song plays.">
+      <change afterPath="$PROJECT_DIR$/app/static/songs/10.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/11.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/12.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/13.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/14.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/7.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/8.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/songs/9.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/spotify_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/spotify_dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/songs/I_Wanna_Be_Yours.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/songs/2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/songs/jo_tum_mere_ho.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/songs/3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/songs/nadaniya.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/songs/4.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/songs/pehli_nazar_mein.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/songs/5.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/songs/tum_hi_ho.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/songs/6.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762614464090</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. Pulse Animation when song plays.">
+      <option name="closed" value="true" />
+      <created>1762614812804</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762614812804</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +182,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="1. Changes in layout.&#10;2. Added Nav Bar Vol." />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Changes in layout.&#10;2. Added Nav Bar Vol." />
+    <MESSAGE value="1. Pulse Animation when song plays." />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Pulse Animation when song plays." />
   </component>
 </project>

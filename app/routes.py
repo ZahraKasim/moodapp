@@ -1,85 +1,3 @@
-# from flask import Blueprint, render_template, request, jsonify
-# import cv2
-# import pandas as pd
-# import time
-#
-# main = Blueprint("main", __name__)
-#
-# # Load Haar cascades
-# face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-# smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
-#
-# # Load dataset
-# try:
-#     df = pd.read_csv("app/spotify_dataset.csv")
-# except FileNotFoundError:
-#     df = pd.DataFrame()  # empty fallback
-#
-#
-# def detect_mood():
-#     cap = cv2.VideoCapture(0)
-#     mood = "sad"
-#     start_time = time.time()
-#
-#     while True:
-#         ret, frame = cap.read()
-#         if not ret:
-#             break
-#
-#         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#         gray = cv2.equalizeHist(gray)
-#         faces = face_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5)
-#
-#         for (x, y, w, h) in faces:
-#             roi_gray = gray[y:y + h, x:x + w]
-#             smiles = smile_cascade.detectMultiScale(
-#                 roi_gray, scaleFactor=1.3, minNeighbors=15, minSize=(25, 25)
-#             )
-#             if len(smiles) > 0:
-#                 mood = "happy"
-#                 break
-#
-#         if (time.time() - start_time) > 10:  # timeout after 10s
-#             break
-#
-#     cap.release()
-#     cv2.destroyAllWindows()
-#     return mood
-#
-#
-# @main.route("/")
-# def home():
-#     return render_template("home.html")
-#
-#
-# @main.route("/recommend", methods=["POST"])
-# def recommend():
-#     artist_input = request.form.get("artist", "").lower()
-#
-#     if df.empty:
-#         return jsonify({"error": "⚠️ Dataset not found."})
-#
-#     mood = detect_mood()
-#
-#     artist_df = df[df["artist_name"].str.lower().str.contains(artist_input)]
-#     if artist_df.empty:
-#         return jsonify({"error": "⚠️ No songs found for that artist."})
-#
-#     if mood == "happy":
-#         filtered_df = artist_df[artist_df["valence"] > 0.5]
-#     else:
-#         filtered_df = artist_df[artist_df["valence"] <= 0.5]
-#
-#     if filtered_df.empty:
-#         return jsonify({"error": "⚠️ No songs found for this mood."})
-#
-#     top_songs = filtered_df[["track_name", "artist_name"]].drop_duplicates().head(6)
-#     songs_list = [
-#         {"track": row["track_name"], "artist": row["artist_name"]}
-#         for _, row in top_songs.iterrows()
-#     ]
-#
-#     return jsonify({"mood": mood, "songs": songs_list})
 from flask import Blueprint, render_template, request, jsonify, url_for
 import cv2
 import pandas as pd
@@ -90,12 +8,21 @@ main = Blueprint("main", __name__)
 
 
 song_files = {
-    "tum hi ho": "tum_hi_ho.mp3",
-    "i wanna be yours": "i_wanna_be_yours.mp3",
-    "pehli nazar mein": "pehli_nazar_mein.mp3",
-    "jo tum mere ho": "jo_tum_mere_ho.mp3",
-    "nadaniya": "nadaniya.mp3",
-    # add more tracks here
+    "tum hi ho": "6.mp3",
+    "i wanna be yours": "2.mp3",
+    "pehli nazar mein": "5.mp3",
+    "jo tum mere ho": "3.mp3",
+    "nadaniya": "4.mp3",
+    "baatein ye kabhi na": "7.mp3",
+    "channa mereya": "8.mp3",
+    "ghungroo": "9.mp3",
+    "hamari adhuri kahani": "10.mp3",
+    "khamoshiyan": "11.mp3",
+    "kya jhumka": "12.mp3",
+    "nashe si chadhgayi": "13.mp3",
+    "sahiba": "1.mp3",
+    "sooraj duba hai": "14.mp3"
+     # add more tracks here
 }
 
 
