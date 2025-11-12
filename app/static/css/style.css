@@ -789,6 +789,61 @@ header .song_section nav .search::before{
     pointer-events: none;
 }
 
+/* Search Results*/
+header .song_section nav .search .search_results{
+    position: absolute;
+    left: 70px;
+    width: 100%;
+    height: 200px;
+    /*border: 1px solid #fff;*/
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+header .song_section nav .search .search_results::-webkit-scrollbar{
+    display:none;
+}
+
+header .song_section nav .search .search_results .card{
+    width: 100%;
+    left: 70px;
+    min-height: 45px;
+    /*border: 1px solid #fff;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(184, 184, 184, .1);
+    margin-bottom: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: none;
+}
+
+header .song_section nav .search .search_results .card img{
+    width: 42px;
+    height: 42px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+header .song_section nav .search .search_results .card .content{
+    width: 80%;
+    height: 100%;
+   /*border: 1px solid #fff;*/
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+}
+
+header .song_section nav .search .search_results .card .content .subtitle{
+    font-size: 12px;
+    color: #a4a8b4;
+    font-weight: 500;
+}
+
 header .song_section nav .search .bi{
     font-size: 18px;
     padding: 3px 0px 0px 10px;

@@ -133,23 +133,6 @@ player.addEventListener("timeupdate", () => {
   startTime.innerText = formatTime(player.currentTime);
   endTime.innerText = formatTime(player.duration || 0);
 
-
-   const makeAllPlays = () =>{
-        Array.from(document.getElementsByClassName('.playListPLay')).forEach((element)=>{
-            element.classList.add('bi-play-circle-fill');
-            element.classList.remove('bi-pause-circle-fill');
-        })
-     }
-
-    let index = 0;
-    Array.from(document.getElementsByClassName('.playListPLay')).forEach((element)=>{
-        element.addEventListener('click', (e)=>{
-            index = e.target.id;
-            e.target.classList.remove('bi-play-circle-fill');
-            e.target.classList.add('bi-pause-circle-fill');
-        })
-    })
-
   seek.value = progressBar;
   bar1.style.width = `$(seekbar)%`;
   point.style.left = `$(seekbar)%`;
@@ -206,9 +189,76 @@ vol.addEventListener('change', ()=>{
         return `${minutes}:${seconds < 10 ? "0"+seconds : seconds}`;
     }
 
+    let abc = [
+    {
+        id: '1',
+        songName: `Sahiba<br>
+        <div class="subtitle">Aditya Rikhari</div>`,
+        poster: "../static/1.jpg"
+    },
+    {
+        id: '2',
+        songName: `I Wanna Be Yours<br>
+        <div class="subtitle">Arctic Monkeys</div>`,
+        poster: "../static/2.jpg"
+    },
+    {
+        id: '3',
+        songName: `Jo Tum Mere Ho<br>
+        <div class="subtitle">Anuv Jain</div>`,
+        poster: "../static/3.jpg"
+    },
+    {
+        id: '4',
+        songName: `Nadaniya<br>
+        <div class="subtitle">Akshath</div>`,
+        poster: "../static/4.jpg"
+    },
+    {
+        id: '5',
+        songName: `Pehli Nazar Mein<br>
+        <div class="subtitle">Atif Aslam</div>`,
+        poster: "../static/5.jpg"
+    },
+    {
+        id: '6',
+        songName: `Tum Hi Ho<br>
+        <div class="subtitle">Arijit Singh</div>`,
+        poster: "../static/6.jpg"
+    },
 
+    {
+        id: '12',
+        songName: `Kya Jhumka<br>
+        <div class="subtitle">Arijit Singh</div>`,
+        poster: ""
+    },
+
+    {
+        id: '7',
+        songName: `Baatein Ye Kabhi Na<br>
+        <div class="subtitle">Arijit Singh</div>`,
+        poster: ""
+    },
+
+    ]
+
+    const makeAllPlays = () =>{
+        Array.from(document.getElementsByClassName('playListPlay')).forEach((el)=>{
+           el.classList.add("bi-play-circle-fill");
+           el.classList.remove("bi-pause-circle-fill");
+        })
+    }
+
+    const makeAllBackground = () =>{
+        Array.from(document.getElementsByClassName('songs')).forEach((el)=>{
+            el.style.background = 'rgb(105, 105, 170, .0)';
+        })
+    }
 
     let index1 = 0;
+    let poster_master_play = document.getElementById('poster_master_play');
+    let title = document.getElementById('title');
 
 Array.from(document.getElementsByClassName('playListPlay')).forEach((e)=> {
     e.addEventListener('click', (el)=>{
@@ -216,10 +266,73 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((e)=> {
     //console.log(index);
     source.src = `../static/songs/${index1}.mp3`;
     player.load();
+    poster_master_play.src = `../static/${index1}.jpg`
     player.play();
-    })
+    playBtn.classList.remove("bi-play-fill");
+    playBtn.classList.add("bi-pause-fill");
+    pulse.classList.add('active2');
+
+    let songTitles = abc.filter((els) =>{
+        return els.id == index1;
+    });
+
+    songTitles.forEach(elss =>{
+        let{songName} = elss;
+        title.innerHTML = songName;
+    });
+
+    makeAllBackground();
+    Array.from(document.getElementsByClassName('songs'))[index1].style.background = "rgb(105, 105, 170, .1)";
+    Array.from(document.getElementsByClassName('songs'))[index1].style.borderRadius = "10px";
+    makeAllPlays();
+    el.target.classList.remove('bi-play-circle-fill');
+    el.target.classList.add('bi-pause-circle-fill');
+  })
 })
 
+//search data start
+    let search_results = document.getElementsByClassName('search_results')[0];
+
+    abc.forEach(element => {
+        const{id, songName, poster} = element;
+        //console.log(poster);
+        let card = document.createElement('a');
+        card.classList.add('card');
+        card.href = "#" + id;
+        card.innerHTML = `
+            <img src="${poster}" alt="">
+                                <div class="content">
+                                    ${songName}
+                                </div>
+        `;
+        search_results.appendChild(card);
+    });
+
+let input = document.getElementsByClassName('search_input')[0];
+
+input.addEventListener('keyup', ()=>{
+    let input_value = input.value.toUpperCase();
+    let items = search_results.getElementsByTagName('a');
+
+    for (let index = 0; index < items.length; index++){
+        let as = items[index].getElementsByClassName('content')[0];
+        let text_value = as.textContent || as.innerHTML;
+
+        if(text_value.toUpperCase().indexOf(input_value) > -1){
+            items[index].style.display = "flex";
+        }else{
+            items[index].style.display = "none";
+        }
+
+        if(input.value == 0){
+            search_results.style.display = "none";
+        }
+        else{
+            search_results.style.display = "";
+        }
+    }
+})
+//search data end
 });
 
 
