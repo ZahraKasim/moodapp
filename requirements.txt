@@ -1,6 +1,9 @@
 flask
 gunicorn
-opencv-python
-numpy
 pandas
+numpy
+opencv-python
 deepface
+tensorflow
+keras
+mtcnn
